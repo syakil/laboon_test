@@ -37,7 +37,7 @@ Route::get('/testimonials', function () {
 
 Auth::routes();
 
-Route::get('/home', 'landingPageController@index')->name('home');
+Route::get('/home', 'LandingPageController@index')->name('home');
 Route::get('/book', 'BookController@index')->name('book.index');
 Route::post('/book', 'BookController@destroy')->name('book.destroy');
 

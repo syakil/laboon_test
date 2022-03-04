@@ -1,6 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
+@if ($message = Session::get('error'))
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    Swal.fire({
+        title: 'Oops!',
+        text: 'Something Wrong ! '+ $message,
+        icon: 'error',
+    })
+
+</script>
+@endif
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

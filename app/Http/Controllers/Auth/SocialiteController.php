@@ -21,8 +21,10 @@ class SocialiteController extends Controller
 
         try {
             $user = Socialite::driver($provider)->user();
+            
         } catch (\Exception $th) {
-            return redirect('/login');
+
+            return redirect('/login')->with(['error'=>$th->getMessage()]);
         }
 
         $authUser = $this->findOrCreateUser($user,$provider);
